@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { API_URL } from './config';
 
 const Notificaciones = ({ notificaciones, noLeidas, marcarTodasLeidas, eliminarNotificacion }) => {
     const [abierto, setAbierto] = useState(false);

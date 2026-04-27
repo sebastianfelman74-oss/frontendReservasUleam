@@ -1,5 +1,6 @@
 // src/components/reservas.jsx
 import React, { useState, useEffect } from 'react';
+import { API_URL } from './config';
 import { ChevronLeft, ChevronRight, Clock, MapPin, X } from 'lucide-react';
 
 const Reservar = ({ onBack, user }) => {
