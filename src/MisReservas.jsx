@@ -16,7 +16,7 @@ const MisReservas = ({ onBack, user }) => {
     setLoading(true);
     setError('');
     try {
-      const response = await fetch(`http://${API_URL}/reserva`, {
+      const response = await fetch(`${API_URL}/reserva`, {
         credentials: 'include'
       });
 
@@ -48,7 +48,7 @@ const MisReservas = ({ onBack, user }) => {
     if (!confirmar) return;
 
     try {
-      const response = await fetch(`http://${API_URL}/reserva/${reservaId}`, {
+      const response = await fetch(`${API_URL}/reserva/${reservaId}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json'

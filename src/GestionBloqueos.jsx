@@ -36,8 +36,8 @@ const GestionBloqueos = ({ onBack, user }) => {
     setLoading(true);
     try {
       const [bloqueosRes, recursosRes] = await Promise.all([
-        fetch(`http://${API_URL}/bloqueos`, { credentials: 'include' }),
-        fetch(`http://${API_URL}/recurso`, { credentials: 'include' })
+        fetch(`${API_URL}/bloqueos`, { credentials: 'include' }),
+        fetch(`${API_URL}/recurso`, { credentials: 'include' })
       ]);
 
       const bloqueosData = await bloqueosRes.json();
@@ -65,8 +65,8 @@ const GestionBloqueos = ({ onBack, user }) => {
     e.preventDefault();
     try {
       const url = editando
-        ? `http://${API_URL}/bloqueos/${editando}`
-        : `http://${API_URL}/bloqueos`;
+        ? `${API_URL}/bloqueos/${editando}`
+        : `${API_URL}/bloqueos`;
       const method = editando ? 'PUT' : 'POST';
 
       const res = await fetch(url, {
@@ -114,7 +114,7 @@ const GestionBloqueos = ({ onBack, user }) => {
     if (!window.confirm('¿Estás seguro de eliminar este bloqueo?')) return;
 
     try {
-      const res = await fetch(`http://${API_URL}/bloqueos/${id}`, {
+      const res = await fetch(`${API_URL}/bloqueos/${id}`, {
         method: 'DELETE',
         credentials: 'include'
       });

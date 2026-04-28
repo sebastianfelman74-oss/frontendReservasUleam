@@ -22,7 +22,7 @@ const Reservar = ({ onBack, user }) => {
   useEffect(() => {
     const cargarRecursos = async () => {
       try {
-        const response = await fetch(`http://${API_URL}/recurso`, {
+        const response = await fetch(`${API_URL}/recurso`, {
           credentials: 'include'
         });
         if (response.ok) {
@@ -47,7 +47,7 @@ const Reservar = ({ onBack, user }) => {
     try {
       const fechaStr = selectedDate.toISOString().split('T')[0];
       const response = await fetch(
-        `http://${API_URL}/recurso/${selectedRecurso}/disponibilidad?fecha=${fechaStr}`,
+        `${API_URL}/recurso/${selectedRecurso}/disponibilidad?fecha=${fechaStr}`,
         { credentials: 'include' }
       );
       if (response.ok) {
@@ -117,7 +117,7 @@ const Reservar = ({ onBack, user }) => {
 
     try {
       const fechaBase = selectedDate.toISOString().split('T')[0];
-      const response = await fetch(`http://${API_URL}/reserva`, {
+      const response = await fetch(`${API_URL}/reserva`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         credentials: 'include',

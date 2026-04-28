@@ -42,7 +42,7 @@ const UleamReservas = () => {
     setLoadingReservas(true);
     try {
       // Cargar reservas
-      const reservasResponse = await fetch(`http://${API_URL}/reserva`, {
+      const reservasResponse = await fetch(`${API_URL}/reserva`, {
         credentials: 'include'
       });
 
@@ -67,7 +67,7 @@ const UleamReservas = () => {
       }
 
       // Cargar espacios disponibles
-      const espaciosResponse = await fetch(`http://${API_URL}/recurso`, {
+      const espaciosResponse = await fetch(`${API_URL}/recurso`, {
         credentials: 'include'
       });
 
@@ -152,7 +152,7 @@ const UleamReservas = () => {
     sessionStorage.clear();
 
     // Llamada al servidor en segundo plano (opcional)
-    fetch(`http://${API_URL}/auth/logout`, {
+    fetch(`${API_URL}/auth/logout`, {
       method: 'POST',
       credentials: 'include'
     }).catch(() => { });

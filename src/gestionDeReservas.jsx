@@ -16,11 +16,11 @@ const GestionReservas = ({ onBack, user }) => {
     setLoading(true);
     setError('');
     try {
-      let url = 'http://${API_URL}/reserva';
+      let url = '${API_URL}/reserva';
       
       // Si el filtro es PENDIENTE, usar el endpoint específico
       if (filtro === 'PENDIENTE') {
-        url = `http://${API_URL}/admin/reservas/pendientes`;
+        url = `${API_URL}/admin/reservas/pendientes`;
       }
 
       const response = await fetch(url, {
@@ -55,7 +55,7 @@ const GestionReservas = ({ onBack, user }) => {
     if (!confirmar) return;
 
     try {
-      const response = await fetch(`http://${API_URL}/admin/reserva/${reservaId}/estado`, {
+      const response = await fetch(`${API_URL}/admin/reserva/${reservaId}/estado`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json'
