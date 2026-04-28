@@ -1,2 +1,2 @@
 
-export const API_URL = "https://TU-BACKEND.up.railway.app";
+export const API_URL = process.env.REACT_APP_API_URL;
