@@ -8,6 +8,7 @@ import Reportes from './Reportes.jsx';
 import GestionBloqueos from './GestionBloqueos.jsx';
 import useNotificaciones from './useNotificaciones';
 import Notificaciones from './Notificaciones.jsx';
+import { API_URL } from './config';
 
 const UleamReservas = () => {
   const [activeReservas, setActiveReservas] = useState(0);
