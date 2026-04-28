@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect } from 'react';
 import Login from './Login.jsx';
 import Reservar from './reservas.jsx';
 import VerEspacios from './verEspacios.jsx';
@@ -20,7 +20,6 @@ const UleamReservas = () => {
   const [user, setUser] = useState(null);
   const [showReservar, setShowReservar] = useState(false);
   const [showEspacios, setShowEspacios] = useState(false);
-  const [showAgregarRecurso, setShowAgregarRecurso] = useState(false);
   const [showGestionReservas, setShowGestionReservas] = useState(false); // Para acceptar o rechazar reservas
   const [showMisReservas, setShowMisReservas] = useState(false); // Para ver las reservas del usuario
   const [showReportes, setShowReportes] = useState(false);
@@ -267,10 +266,12 @@ const UleamReservas = () => {
                 </button>
               )}
               {esAdmin && (
-                <a href="#" onClick={(e) => { e.preventDefault(); setShowBloqueos(true); }}
-                  className="text-gray-500 hover:text-blue-600 font-medium">
+                <button
+                  onClick={() => setShowBloqueos(true)}
+                  className="text-gray-500 hover:text-blue-600 font-medium"
+                >
                   🔒 Bloqueos
-                </a>
+                </button>
               )}
 
               <div className="flex items-center space-x-4">
