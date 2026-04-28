@@ -163,7 +163,6 @@ const UleamReservas = () => {
   const volverAlDashboard = () => {
     setShowReservar(false);
     setShowEspacios(false);
-    setShowAgregarRecurso(false);
     setShowGestionReservas(false);
     setShowMisReservas(false);
     setShowReportes(false);
@@ -194,7 +193,6 @@ const UleamReservas = () => {
       <VerEspacios
         onBack={volverAlDashboard}
         user={user}
-        onAgregarRecurso={() => setShowAgregarRecurso(true)}
       />
     );
   }
