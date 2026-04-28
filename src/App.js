@@ -226,57 +226,45 @@ const UleamReservas = () => {
               </div>
             </div>
             <nav className="flex space-x-8 items-center">
-              <a href="#" className="text-gray-900 hover:text-blue-600 font-medium">Inicio</a>
-              <a
-                href="#"
-                onClick={(e) => {
-                  e.preventDefault();
-                  setShowReservar(true);
-                }}
+              <span className="text-gray-900 font-medium">Inicio</span>
+
+              <button
+                onClick={() => setShowReservar(true)}
                 className="text-gray-500 hover:text-blue-600"
               >
                 Reservar
-              </a>
-              <a
-                href="#"
-                onClick={(e) => {
-                  e.preventDefault();
-                  setShowEspacios(true);
-                }}
+              </button>
+
+              <button
+                onClick={() => setShowEspacios(true)}
                 className="text-gray-500 hover:text-blue-600"
               >
                 Espacios
-              </a>
+              </button>
 
-              <a
-                href="#"
-                onClick={(e) => {
-                  e.preventDefault();
-                  setShowMisReservas(true); // Regresar al dashboard principal
-                }}
+              <button
+                onClick={() => setShowMisReservas(true)}
                 className="text-gray-500 hover:text-blue-600"
               >
                 Mis Reservas
-              </a>
+              </button>
 
-              {/* ✅ NUEVO: Botón de Gestión solo visible para admins */}
               {esAdmin && (
-                <a
-                  href="#"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    setShowGestionReservas(true);
-                  }}
+                <button
+                  onClick={() => setShowGestionReservas(true)}
                   className="text-gray-500 hover:text-blue-600 font-medium"
                 >
                   🛡️ Gestión
-                </a>
+                </button>
               )}
+
               {esAdmin && (
-                <a href="#" onClick={(e) => { e.preventDefault(); setShowReportes(true); }}
-                  className="text-gray-500 hover:text-blue-600 font-medium">
+                <button
+                  onClick={() => setShowReportes(true)}
+                  className="text-gray-500 hover:text-blue-600 font-medium"
+                >
                   📊 Reportes
-                </a>
+                </button>
               )}
               {esAdmin && (
                 <a href="#" onClick={(e) => { e.preventDefault(); setShowBloqueos(true); }}
