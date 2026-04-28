@@ -36,8 +36,8 @@ const GestionBloqueos = ({ onBack, user }) => {
     setLoading(true);
     try {
       const [bloqueosRes, recursosRes] = await Promise.all([
-        fetch('http://${API_URL}/bloqueos', { credentials: 'include' }),
-        fetch('http://${API_URL}/recurso', { credentials: 'include' })
+        fetch(`http://${API_URL}/bloqueos`, { credentials: 'include' }),
+        fetch(`http://${API_URL}/recurso`, { credentials: 'include' })
       ]);
 
       const bloqueosData = await bloqueosRes.json();
@@ -66,7 +66,7 @@ const GestionBloqueos = ({ onBack, user }) => {
     try {
       const url = editando
         ? `http://${API_URL}/bloqueos/${editando}`
-        : 'http://${API_URL}/bloqueos';
+        : `http://${API_URL}/bloqueos`;
       const method = editando ? 'PUT' : 'POST';
 
       const res = await fetch(url, {

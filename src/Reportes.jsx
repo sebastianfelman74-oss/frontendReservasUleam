@@ -23,9 +23,9 @@ const Reportes = ({ onBack, user }) => {
     setError(null);
     try {
       const [espacioRes, mesRes, usadosRes] = await Promise.all([
-        fetch('http://${API_URL}/reportes/por-espacio', { credentials: 'include' }),
-        fetch('http://${API_URL}/reportes/por-mes', { credentials: 'include' }),
-        fetch('http://${API_URL}/reportes/espacios-mas-usados', { credentials: 'include' })
+        fetch(`http://${API_URL}/reportes/por-espacio`, { credentials: 'include' }),
+        fetch(`http://${API_URL}/reportes/por-mes`, { credentials: 'include' }),
+        fetch(`http://${API_URL}/reportes/espacios-mas-usados`, { credentials: 'include' })
       ]);
 
       if (!espacioRes.ok || !mesRes.ok || !usadosRes.ok) {

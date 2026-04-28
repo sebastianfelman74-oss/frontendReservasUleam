@@ -35,7 +35,7 @@ const Login = ({ onLoginSuccess }) => {
 
     try {
       // URL directa y simple
-      const response = await fetch('http://${API_URL}/auth/login', {
+      const response = await fetch(`http://${API_URL}/auth/login`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -88,7 +88,7 @@ const Login = ({ onLoginSuccess }) => {
   useEffect(() => {
     const verificarSesion = async () => {
       try {
-        const response = await fetch('http://${API_URL}/auth/me', {
+        const response = await fetch(`http://${API_URL}/auth/me` , {
           method: 'GET',
           credentials: 'include'
         });

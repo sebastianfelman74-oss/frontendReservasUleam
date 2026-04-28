@@ -16,7 +16,7 @@ const MisReservas = ({ onBack, user }) => {
     setLoading(true);
     setError('');
     try {
-      const response = await fetch('http://${API_URL}/reserva', {
+      const response = await fetch(`http://${API_URL}/reserva`, {
         credentials: 'include'
       });
 

@@ -20,7 +20,7 @@ const GestionReservas = ({ onBack, user }) => {
       
       // Si el filtro es PENDIENTE, usar el endpoint específico
       if (filtro === 'PENDIENTE') {
-        url = 'http://${API_URL}/admin/reservas/pendientes';
+        url = `http://${API_URL}/admin/reservas/pendientes`;
       }
 
       const response = await fetch(url, {

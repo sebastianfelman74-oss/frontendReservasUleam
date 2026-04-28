@@ -22,7 +22,7 @@ const VerEspacios = ({ onBack, user }) => {
 
   const cargarEspacios = async () => {
     try {
-      const response = await fetch('http://${API_URL}/recurso', {
+      const response = await fetch(`http://${API_URL}/recurso`, {
         credentials: 'include'
       });
 
@@ -58,7 +58,7 @@ const VerEspacios = ({ onBack, user }) => {
     setError('');
 
     try {
-      const response = await fetch('http://${API_URL}/recurso', {
+      const response = await fetch(`http://${API_URL}/recurso` , {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
