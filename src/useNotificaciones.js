@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { io } from 'socket.io-client';
+import { API_URL } from './config';
 
 const useNotificaciones = (user) => {
     const [socket, setSocket] = useState(null);
